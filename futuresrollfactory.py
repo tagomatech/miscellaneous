@@ -6,7 +6,7 @@
 
 import pandas as pd
 
-def compute_roll_gaps(df:pd.DataFrame, matchEnd=True):
+def compute_roll_gaps(df:pd.DataFrame, matchEnd=True) -> pd.DataFrame:
     
     # Compute gaps at each roll, between previous close and next open
     roll_dates = df['Instrument'].drop_duplicates(keep='first').index
@@ -27,6 +27,7 @@ def compute_roll_gaps(df:pd.DataFrame, matchEnd=True):
 
 def get_rolled_futures(df:pd.DataFrame) -> pd.DataFrame:
     
+    # Rename original BBG columns
     dic_cols = {'FUT_CUR_GEN_TICKER' : 'Instrument',
                             'PX_OPEN' : 'Open',
                             'PX_HIGH' : 'High',
