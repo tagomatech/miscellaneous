@@ -28,7 +28,7 @@ def compute_roll_gaps(df:pd.DataFrame, matchEnd=True) -> pd.DataFrame:
 
 def get_rolled_futures(df:pd.DataFrame) -> pd.DataFrame:
     
-    df= df.copy()
+    df= df.copy(deep=True)
 
     gaps = compute_roll_gaps(df)
 
