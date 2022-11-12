@@ -1,7 +1,8 @@
 # futuresrollfactory.py
 # tagomatech (Nov-22)
-# Heavily based on Marcos Lopez de Prado SNIPPET 2.2 FORM A GAPS SERIES, DETRACT IT FROM PRICES
-# in Advancces in Financial Machine Learning
+# Inspired by Marcos Lopez de Prado#s Advancces in Financial Machine Learning
+# SNIPPET 2.2 FORM A GAPS SERIES, DETRACT IT FROM PRICES
+
 
 import pandas as pd
 
@@ -26,6 +27,8 @@ def compute_roll_gaps(df:pd.DataFrame, matchEnd=True) -> pd.DataFrame:
 
 
 def get_rolled_futures(df:pd.DataFrame) -> pd.DataFrame:
+    
+    df= df.copy()
 
     gaps = compute_roll_gaps(df)
 
