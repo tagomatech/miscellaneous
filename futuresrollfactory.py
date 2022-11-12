@@ -11,12 +11,12 @@ def compute_roll_gaps(df:pd.DataFrame, matchEnd=True) -> pd.DataFrame:
     # Compute gaps at each roll, between previous close and next open
     roll_dates = df['Instrument'].drop_duplicates(keep='first').index
     
-    gaps = df['Close']*0
+    gaps = df['Close'] * 0
     
     iloc = list(df.index)
-    iloc = [iloc.index(i)-1 for i in roll_dates] # index of days prior to roll
+    iloc = [iloc.index(i) - 1 for i in roll_dates] # index of days prior to roll
     
-    gaps.loc[roll_dates[1:]] = df['Open'].loc[roll_dates[1:]] - df['Close'].iloc[iloc[1:]].values
+    gaps.loc[roll_dates[1: ]] = df['Open'].loc[roll_dates[1: ]] - df['Close'].iloc[iloc[1: ]].values
     gaps = gaps.cumsum()
     
     if matchEnd:
@@ -35,7 +35,6 @@ def get_rolled_futures(df:pd.DataFrame) -> pd.DataFrame:
                             'PX_LAST' : 'Last',
                             'PX_SETTLE' : 'Close',
                             'EQY_WEIGHTED_AVG_PX' : 'VWAP'}
-    
     df = df.rename(columns=dic_cols)
 
     gaps = compute_roll_gaps(df)
