@@ -1,4 +1,6 @@
-# Based on Marcos Lopez de Prado SNIPPET 2.2 FORM A GAPS SERIES, DETRACT IT FROM PRICES
+# futuresrollfactory.py
+# tagomatech (Nov-22)
+# Heavily based on Marcos Lopez de Prado SNIPPET 2.2 FORM A GAPS SERIES, DETRACT IT FROM PRICES
 # in Advancces in Financial Machine Learning
 
 
