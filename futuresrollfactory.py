@@ -3,8 +3,8 @@
 # Heavily based on Marcos Lopez de Prado SNIPPET 2.2 FORM A GAPS SERIES, DETRACT IT FROM PRICES
 # in Advancces in Financial Machine Learning
 
-
 import pandas as pd
+
 
 def compute_roll_gaps(df:pd.DataFrame, matchEnd=True) -> pd.DataFrame:
     
