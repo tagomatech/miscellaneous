@@ -36,9 +36,9 @@ def get_rolled_futures(df:pd.DataFrame) -> pd.DataFrame:
                             'EQY_WEIGHTED_AVG_PX' : 'VWAP'}
     
     df = df.rename(columns=dic_cols)
-    #print(df)
+
     gaps = compute_roll_gaps(df)
-    #print(gaps)
+
     for fld in ['Open', 'High', 'Low', 'Last', 'Close', 'VWAP']:
         df[fld] -= gaps
     
