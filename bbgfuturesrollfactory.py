@@ -96,6 +96,6 @@ class BBGFuturesRollFactory:
         gaps = gaps.cumsum()
         
         if roll_backward:
-            gaps -= gaps.iloc[-1] # roll backward
+            gaps -= gaps.iloc[-1]
         
         return gaps
