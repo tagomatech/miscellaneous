@@ -40,7 +40,6 @@ class BBGFuturesRollFactory:
         self.bquery.stop()
 
 
-
     def get_data(self, ticker:str, start_date:str, end_date:str, lst_fields:list) -> pd.DataFrame:
 
         lst_fields = list(set(lst_fields + ['PX_OPEN', 'PX_LAST', 'FUT_CUR_GEN_TICKER'])) # As these 3 fields is not already in the list
