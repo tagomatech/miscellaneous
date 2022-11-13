@@ -1,11 +1,9 @@
 # bbgfuturesrollfactory.py
 # tagoma (Nov.22)
 
-
 import datetime as dt
 import pandas as pd
 from blp import blp
-
 
 class BBGFuturesRollFactory:
     """
