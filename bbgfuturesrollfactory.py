@@ -1,5 +1,5 @@
 # bbgfuturesrollfactory.py
-# tagoma (Nov.22)
+# tagoma (Nov-22)
 
 import datetime as dt
 import pandas as pd
