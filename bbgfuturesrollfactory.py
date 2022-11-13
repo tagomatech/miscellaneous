@@ -1,9 +1,11 @@
 # bbgfuturesrollfactory.py
-# tagoma (Nov-22)
+# tagoma (Nov.22)
+
 
 import datetime as dt
 import pandas as pd
 from blp import blp
+
 
 class BBGFuturesRollFactory:
     """
@@ -52,7 +54,7 @@ class BBGFuturesRollFactory:
         )
 
 
-    def roll(self, bbg_data:pd.DataFrame, cols_to_not_roll:list=[]) -> pd.DataFrame:
+    def roll(self, bbg_data:pd.DataFrame, cols_to_not_roll:list=[], roll_backward=True) -> pd.DataFrame:
 
         cols_to_not_roll = list(set(cols_to_not_roll + ['date', 'security', 'FUT_CUR_GEN_TICKER'])) # As these 3 fields is not already in the list
         cols_to_roll = set(bbg_data.columns.tolist()) - set(cols_to_not_roll)
@@ -62,7 +64,7 @@ class BBGFuturesRollFactory:
         df_rolled = pd.DataFrame()
         df_rolled = bbg_data.assign(date = bbg_data.date.values)
 
-        gaps = self.compute_roll_gaps(bbg_data)
+        gaps = self.compute_roll_gaps(df=bbg_data, roll_backward=roll_backward)
 
         # Stabdard roll
         for col in cols_to_roll:
