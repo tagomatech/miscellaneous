@@ -12,7 +12,7 @@ class BBGFuturesRollFactory:
     Essentially it is a wrapper around Marcos Lopez de Prado's snippet codes
     SNIPPET 2.2 FORM A GAPS SERIES, DETRACT IT FROM PRICES and
     SNIPPET 2.3 NON-NEGATIVE ROLLED PRICE SERIES
-    from his book Advancces in Financial Machine Learning
+    from his book Advances in Financial Machine Learning
 
     Example:
     -------
