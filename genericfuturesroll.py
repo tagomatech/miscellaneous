@@ -1,4 +1,5 @@
 # genericfuturesroll.py
+# tagomatech Nov-25
 
 from __future__ import annotations
 from typing import Optional, Mapping, Literal, Sequence
